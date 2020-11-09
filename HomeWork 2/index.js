@@ -30,6 +30,18 @@ Object.prototype.findMax = function () {
 };
 
 Object.prototype.findMin = function () {
+  let myMin = 0;
+  let myArray = this.filterArrayNumber();
+
+  for(let i = 0; i < myArray.length; i++) {
+    if(myArray[i] < myMin) {
+      myMin = myArray[i];
+    } else {
+      console.log(`${myArray[i]} is not more than ${myMin}`);
+    }
+  }
+
+  return myMin;
 
 };
 
