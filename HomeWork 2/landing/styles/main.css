@@ -16,7 +16,7 @@
 
 .main_left {
   width: 19%;
-  min-height: 1000px;
+  min-height: 1200px;
   margin-right: 2%;
   display: flex;
   flex-direction: column;
@@ -27,14 +27,14 @@
 
 .main_left_topPart {
   width: 100%;
-  min-height: 500px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
 }
 
 .main_left_topPart_block {
   width: 100%;
-  min-height: 505px;
+  min-height: 400px;
   background: #161616;
   display: flex;
   flex-direction: column;
@@ -42,11 +42,12 @@
 }
 
 .main_left-text {
+  max-width: 85%;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: .2s;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 15px;
   margin-left: 20px;
 }
@@ -57,7 +58,7 @@
 
 .main_left_bottomPart {
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -71,12 +72,13 @@
 
 .main_right {
   width: 78%;
-  min-height: 1000px;
+  min-height: 1200px;
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 0;
 }
 
 .main_right_top {
@@ -84,6 +86,7 @@
   min-height: 250px;
   background: #A6A6A6;
   margin-bottom: 25px;
+  margin-top: 0;
 }
 
 .main_right-text {
@@ -93,6 +96,7 @@
 }
 
 .main_right_top-boldText {
+  max-width: 90%;
   font-size: 18px;
   font-weight: 800;
   margin-bottom: 35px;
@@ -123,7 +127,7 @@
   background: #A6A6A6;
   margin-left: 1%;
   margin-right: 1%;
-  margin-bottom: 25px;
+  margin-bottom: 2%;
 }
 
 .main_right_bottom {
@@ -143,7 +147,155 @@
 }
 
 .main_right_bottom_block p {
-  max-width: 95%;
+  max-width: 90%;
   font-size: 18px;
   line-height: 30px;
+}
+
+@media(min-width: 1280px) and (max-width: 1440px) {
+  .main_left-text {
+    font-size: 14px;
+  }
+  .main_right_middle_block {
+    width: 180px;
+    height: 200px;
+  }
+  .main_right_bottom_block p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+@media(min-width: 1100px) and (max-width: 1280px) {
+  .main_left-text {
+    font-size: 13px;
+  }
+  .main_right_middle_block {
+    width: 160px;
+    height: 180px;
+  }
+  .main_right_bottom_block {
+    min-height: 150px;
+  }
+  .main_right_bottom_block p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media(min-width: 800px) and (max-width: 1100px) {
+  .main_left-text {
+    font-size: 11px;
+  }
+  .main_right_top-boldText {
+    font-size: 15px;
+  }
+  .main_right-li {
+    font-size: 15px;
+  }
+  .main_right_middle_block {
+    width: 140px;
+    height: 160px;
+  }
+  .main_right_bottom_block {
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 25px;
+  }
+  .main_right_bottom_block p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media(min-width: 800px) and (max-width: 970px) {
+  .main_left {
+    width: 29%;
+    min-height: 1310px;
+  }
+  .main_left_topPart {
+    min-height: 650px;
+  }
+  .main_left_bottomPart {
+    min-height: 650px;
+  }
+  .main_right {
+    width: 68%;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 800px) {
+  .main_container {
+    flex-wrap: wrap;
+  }
+  .main_left {
+    width: 100%;
+    min-height: 100px;
+  }
+  .main_left_topPart {
+    margin-bottom: 25px;
+  }
+  .main_left_topPart_block {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .main_left-text {
+    font-size: 18px;
+    margin-left: 0;
+  }
+  .main_left_bottomPart {
+    min-height: 100px;
+  }
+  .main_left_bottomPart_block {
+    width: 100%;
+  }
+  .main_right {
+    width: 100%;
+    min-height: 100px;
+  }
+  .main_right_middle {
+    justify-content: center;
+  }
+  .main_right_middle_block {
+    width: 200px;
+    height: 220px;
+  }
+  .main_right_bottom {
+    flex-wrap: wrap;
+  }
+  .main_right_bottom_block {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 600px) {
+  .main_right-text {
+    font-size: 14px;
+  }
+  .main_right-li {
+    font-size: 14px;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 465px) {
+  .main_right_middle_block {
+    width: 80%;
+    height: 240px;
+    margin-bottom: 25px;
+  }
+  .main_right_bottom_block {
+    min-height: 100px;
+  }
+  .main_right-text {
+    font-size: 13px;
+  }
+  .main_right ul {
+    margin-left: 10px;
+  }
+  .main_right_bottom_block p {
+    line-height: 20px;
+    font-size: 13px;
+  }
 }
