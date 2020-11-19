@@ -22,7 +22,7 @@ console.log('TASK 1: *isPlusStep = only boolean(true = i++/false = i--');
 console.log('TASK 1: example: myFor(0, i < 5, console.log(new Date()), true)');
 myFor(0, 'i < 5', 'console.log(new Date())', true);
 
-// TASK 2: SUM
+// TASK 3: SUM
 const sum = (a) => {
   let sumNumber = a;
 
