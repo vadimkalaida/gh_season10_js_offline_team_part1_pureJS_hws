@@ -82,15 +82,48 @@ Array.prototype.myFilter = function(callback) {
   return foundItemsArray;
 };
 
-// let users = [
-//   {id: 1, name: "John"},
-//   {id: 2, name: "Pete"},
-//   {id: 3, name: "Mary"}
-// ];
+Array.prototype.mySort = function() {
+
+  for(let i = 0; i < this.length; i++) {
+
+    for(let j = i + 1; j < this.length; j++) {
+      if(this[i] > this[j]) {
+        let swap = this[i];
+        this[i] = this[j];
+        this[j] = swap;
+      }
+    }
+
+  }
+
+  return this;
+
+};
+
 
 console.log('TASK 5: array.myForEach(callback)');
 console.log('TASK 5: array.myMap(callback)');
 console.log('TASK 5: array.myFind(callback)');
 console.log('TASK 5: array.myFilter(callback)');
+console.log('TASK 5: array.mySort()');
+console.log('TASK 5: EXAMPLES:');
+
+["Bilbo", "Gandalf", "Nazgul"].myForEach((item, index, array) => {
+  console.log(`${item} is at index ${index} in ${array}`);
+});
+
+console.log(["Bilbo", "Gandalf", "Nazgul"].map(item => item.length));
+
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+console.log(users.myFind(item => item.id == 1));
+console.log(users.myFilter(item => item.id < 3));
+console.log([7, 2, 9, 4, 1, 5, 3].mySort());
+
+
 
 
