@@ -40,6 +40,61 @@ console.log(`TASK 3: sum(2)(4)(6) = ${sum(2)(4)(6)}`);
 console.log(`TASK 3: sum(23)(4) = ${sum(23)(4)}`);
 console.log(`TASK 3: sum(2)(4)(4)(7)(4) = ${sum(2)(4)(4)(7)(4)}`);
 
+// TASK 4: Calculator
+
+let calculate = (firstNum) => {
+  let resNum = firstNum;
+  function resFunc() {
+    return resNum;
+  }
+
+  let calcObj = {
+    add: function (num) {
+      resNum += num;
+      return {
+        add: calcObj.add,
+        minus: calcObj.minus,
+        multiply: calcObj.multiply,
+        divide: calcObj.divide,
+        result: resFunc
+      }
+    },
+    minus: function (num) {
+      resNum -= num;
+      return {
+        add: calcObj.add,
+        minus: calcObj.minus,
+        multiply: calcObj.multiply,
+        divide: calcObj.divide,
+        result: resFunc
+      }
+    },
+    multiply: function (num) {
+      resNum *= num;
+      return {
+        add: calcObj.add,
+        minus: calcObj.minus,
+        multiply: calcObj.multiply,
+        divide: calcObj.divide,
+        result: resFunc
+      }
+    },
+    divide: function (num) {
+      resNum /= num;
+      return {
+        add: calcObj.add,
+        minus: calcObj.minus,
+        multiply: calcObj.multiply,
+        divide: calcObj.divide,
+        result: resFunc
+      }
+    }
+  };
+
+  return calcObj;
+
+};
+
 // TASK 5 : Array methods
 
 Array.prototype.myForEach = function(callback) {
