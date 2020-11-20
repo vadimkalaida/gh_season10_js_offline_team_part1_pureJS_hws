@@ -22,6 +22,198 @@ console.log('TASK 1: *isPlusStep = only boolean(true = i++/false = i--');
 console.log('TASK 1: example: myFor(0, i < 5, console.log(new Date()), true)');
 myFor(0, 'i < 5', 'console.log(new Date())', true);
 
+// TASK 2: Tamagotchi
+
+class Tamagotchi {
+  constructor(name, health, happiness, hungry, thirsty) {
+    this.name = String(name);
+    if(health > 200) {
+      this.health = 200;
+      console.log(this.health);
+    } else if(health < 0 || isNaN(health * 1)) {
+      alert("Health has to be number(from 0 to 200)");
+      location.reload();
+    } else {
+      this.health = parseInt(health);
+    }
+    if(happiness > 200) {
+      this.happiness = 200;
+      console.log(this.happiness);
+    } else if(happiness < 0 || isNaN(happiness * 1)) {
+      alert("Happiness has to be number(from 0 to 200)");
+      location.reload();
+    } else {
+      this.happiness = parseInt(hungry);
+    }
+    if(hungry > 200) {
+      this.hungry = 200;
+      console.log(this.hungry);
+    } else if(hungry < -100 || isNaN(hungry * 1)) {
+      alert("Hungry has to be number(from -100 to 200)");
+      location.reload();
+    } else {
+      this.hungry = parseInt(hungry);
+    }
+    if(thirsty > 200) {
+      this.thirsty = 200;
+      console.log(this.thirsty);
+    } else if(thirsty < -50 || isNaN(thirsty * 1)) {
+      alert("Thirsty has to be number(from -50 to 200)");
+      location.reload();
+    } else {
+      this.thirsty = parseInt(thirsty);
+    }
+  }
+  walk() {
+    if(this.hungry > -50) {
+      if(this.happiness >= 200) {
+        console.log(`${this.name} is walking(happiness is max, hungry - 10, thirsty - 5)`);
+        this.hungry -= 10;
+        this.thirsty -= 5;
+      } else {
+        console.log(`${this.name} is walking(happiness + 20, hungry - 10, thirsty - 5)`);
+        this.happiness += 20;
+        this.hungry -= 10;
+        this.thirsty -= 5;
+      }
+    } else {
+      if(this.happiness >= 200) {
+        console.log(`${this.name} is walking(happiness is max, hungry - 10, thirsty - 5, health - 10)`);
+        this.hungry -= 10;
+        this.health -= 10;
+        this.thirsty -= 5;
+      } else {
+        console.log(`${this.name} is walking(happiness + 20, hungry - 10, thirsty - 5, health - 10)`);
+        this.happiness += 20;
+        this.hungry -= 10;
+        this.health -= 10;
+        this.thirsty -= 5;
+      }
+    }
+    console.log(myTamagotchi);
+  }
+
+  eat() {
+    if(this.hungry < 100) {
+      if(this.happiness >= 200) {
+        if(this.health >= 200) {
+          console.log(`${this.name} is eating(happiness is max, hungry + 20, thirsty - 5, health is max)`);
+          this.hungry += 20;
+          this.thirsty -= 5;
+        } else {
+          console.log(`${this.name} is eating(happiness is max, hungry + 20, thirsty - 5, health + 5)`);
+          this.hungry += 20;
+          this.thirsty -= 5;
+          this.health += 5;
+        }
+      } else {
+        if(this.health >= 200) {
+          console.log(`${this.name} is eating(happiness + 10, hungry + 20, thirsty - 5, health is max)`);
+          this.happiness += 10;
+          this.hungry += 20;
+          this.thirsty -= 5;
+        } else {
+          console.log(`${this.name} is eating(happiness + 10, hungry + 20, thirsty - 5, health + 5)`);
+          this.happiness += 10;
+          this.hungry += 20;
+          this.thirsty -= 5;
+          this.health += 5;
+        }
+      }
+    } else {
+      console.log(`${this.name} is eating(happiness - 15, hungry + 20, thirsty - 10, health - 10)`);
+      this.happiness -= 15;
+      this.hungry += 20;
+      this.thirsty -= 10;
+      this.health -= 10;
+    }
+    console.log(myTamagotchi);
+  }
+
+  drink() {
+    if(this.thirsty < 100) {
+      if(this.happiness >= 200) {
+        if(this.health >= 200) {
+          console.log(`${this.name} is drinking(happiness is max, hungry - 5, thirsty + 10, health is max)`);
+          this.hungry -= 5;
+          this.thirsty += 10;
+        } else {
+          console.log(`${this.name} is drinking(happiness is max, hungry - 5, thirsty + 10, health + 5)`);
+          this.hungry -= 5;
+          this.thirsty += 10;
+          this.health += 5;
+        }
+      } else {
+        if(this.health >= 200) {
+          console.log(`${this.name} is drinking(happiness + 10, hungry - 5, thirsty + 10, health is max)`);
+          this.happiness += 10;
+          this.hungry -= 5;
+          this.thirsty += 10;
+        } else {
+          console.log(`${this.name} is drinking(happiness + 10, hungry - 5, thirsty + 10, health + 5)`);
+          this.happiness += 10;
+          this.hungry -= 5;
+          this.thirsty += 10;
+          this.health += 5;
+        }
+      }
+    } else {
+      console.log(`${this.name} is drinking(happiness - 10, hungry - 5, thirsty + 10, health - 5)`);
+      this.happiness -= 10;
+      this.hungry -= 5;
+      this.thirsty += 10;
+      this.health -= 5;
+    }
+    console.log(myTamagotchi);
+  }
+
+  play() {
+    if(this.happiness >= 200) {
+      console.log(`${this.name} is playing(happiness is max, hungry - 10, thirsty - 10)`);
+      this.hungry -= 10;
+      this.thirsty -= 10;
+    } else {
+      console.log(`${this.name} is playing(happiness + 20, hungry - 10, thirsty - 10)`);
+      this.happiness += 20;
+      this.hungry -= 10;
+      this.thirsty -= 10;
+    }
+    console.log(myTamagotchi);
+  }
+
+  sleep() {
+    if(this.happiness >= 200) {
+      if(this.health >= 200) {
+        console.log(`${this.name} is sleeping(happiness is max, hungry -50, thirsty - 50, health is max)`);
+        this.hungry -= 50;
+        this.thirsty -= 50;
+      } else {
+        console.log(`${this.name} is sleeping(happiness is max, hungry -50, thirsty - 50, health + 50)`);
+        this.hungry -= 50;
+        this.thirsty -= 50;
+        this.health += 50;
+      }
+    } else {
+      if(this.health >= 200) {
+        console.log(`${this.name} is sleeping(happiness + 50, hungry -50, thirsty - 50, health is max)`);
+        this.happiness += 50;
+        this.hungry -= 50;
+        this.thirsty -= 50;
+      } else {
+        console.log(`${this.name} is sleeping(happiness + 50, hungry -50, thirsty - 50, health + 50)`);
+        this.happiness += 50;
+        this.hungry -= 50;
+        this.thirsty -= 50;
+        this.health += 50;
+      }
+    }
+    console.log(myTamagotchi);
+  }
+
+}
+
+let myTamagotchi = new Tamagotchi(prompt('What is name of your Tamagotchi?'), 50, 50, 50, 100);
+
 // TASK 3: SUM
 
 const sum = (a) => {
