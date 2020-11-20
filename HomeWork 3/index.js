@@ -23,6 +23,7 @@ console.log('TASK 1: example: myFor(0, i < 5, console.log(new Date()), true)');
 myFor(0, 'i < 5', 'console.log(new Date())', true);
 
 // TASK 3: SUM
+
 const sum = (a) => {
   let sumNumber = a;
 
@@ -35,10 +36,9 @@ const sum = (a) => {
   return curry;
 };
 
-console.log('TASK 3: sum(num1)(num2)...');
+console.log('TASK 3: sum(num1)(num2)...)');
 console.log(`TASK 3: sum(2)(4)(6) = ${sum(2)(4)(6)}`);
 console.log(`TASK 3: sum(23)(4) = ${sum(23)(4)}`);
-console.log(`TASK 3: sum(2)(4)(4)(7)(4) = ${sum(2)(4)(4)(7)(4)}`);
 
 // TASK 4: Calculator
 
@@ -95,6 +95,10 @@ let calculate = (firstNum) => {
 
 };
 
+console.log("TASK 4: calculate(num).add(num).minus(num).divide(num).multiply(num).result()");
+console.log("TASK 4: ex: calculate(2).add(2).add(2).minus(3).minus(3).divide(1).multiply(100).result()");
+console.log(calculate(2).add(2).add(2).minus(3).minus(3).divide(1).multiply(100).result());
+
 // TASK 5 : Array methods
 
 Array.prototype.myForEach = function(callback) {
@@ -107,8 +111,8 @@ Array.prototype.myMap = function(callback) {
   let newArr = [];
 
   for(let i = 0; i < this.length; i++) {
-    let mappedItem = callback(this[i], i, this);
-    newArr[i] = mappedItem;
+    // let mappedItem = callback(this[i], i, this);
+    newArr[i] = callback(this[i], i, this);
   }
 
   return newArr;
