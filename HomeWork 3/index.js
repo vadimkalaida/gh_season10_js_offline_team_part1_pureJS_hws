@@ -314,6 +314,7 @@ console.log('TASK 3: sum(num1)(num2)...)');
 console.log(`TASK 3: sum(2)(4)(6) = ${sum(2)(4)(6)}`);
 console.log(`TASK 3: sum(23)(4) = ${sum(23)(4)}`);
 
+
 // TASK 4: Calculator
 
 let calculate = (firstNum) => {
