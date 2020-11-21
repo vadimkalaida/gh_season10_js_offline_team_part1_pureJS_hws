@@ -239,6 +239,10 @@ let checkFunction = () => {
   }
 };
 
+let returnInitialTamagotchiImage = () => {
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/initial.gif');
+};
+
 setInterval(() => {
   if(myTamagotchi.health > 200) {
     myTamagotchi.health = 200;
@@ -255,26 +259,41 @@ setInterval(() => {
 document.querySelector('#walk').addEventListener('click', () => {
   myTamagotchi.walk();
   checkFunction();
+
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/walking.gif');
+  setTimeout(returnInitialTamagotchiImage, 1500);
 });
 
 document.querySelector('#play').addEventListener('click', () => {
   myTamagotchi.play();
   checkFunction();
+
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/playing.gif');
+  setTimeout(returnInitialTamagotchiImage, 1500);
 });
 
 document.querySelector('#sleep').addEventListener('click', () => {
   myTamagotchi.sleep();
   checkFunction();
+
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/sleeping.gif');
+  setTimeout(returnInitialTamagotchiImage, 1500);
 });
 
 document.querySelector('#eat').addEventListener('click', () => {
   myTamagotchi.eat();
   checkFunction();
+
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/eating.gif');
+  setTimeout(returnInitialTamagotchiImage, 1500);
 });
 
 document.querySelector('#drink').addEventListener('click', () => {
   myTamagotchi.drink();
   checkFunction();
+
+  document.querySelector('#tamagotchiImage').setAttribute('src', 'images/drinking.gif');
+  setTimeout(returnInitialTamagotchiImage, 1500);
 });
 
 // TASK 3: SUM
