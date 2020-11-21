@@ -261,7 +261,11 @@ document.querySelector('#walk').addEventListener('click', () => {
   checkFunction();
 
   document.querySelector('#tamagotchiImage').setAttribute('src', 'images/walking.gif');
-  setTimeout(returnInitialTamagotchiImage, 1500);
+  setTimeout(() => {
+    if(document.querySelector('#tamagotchiImage').getAttribute('src') === 'images/walking.gif') {
+      returnInitialTamagotchiImage();
+    }
+  }, 1500);
 });
 
 document.querySelector('#play').addEventListener('click', () => {
@@ -269,7 +273,11 @@ document.querySelector('#play').addEventListener('click', () => {
   checkFunction();
 
   document.querySelector('#tamagotchiImage').setAttribute('src', 'images/playing.gif');
-  setTimeout(returnInitialTamagotchiImage, 1500);
+  setTimeout(() => {
+    if(document.querySelector('#tamagotchiImage').getAttribute('src') === 'images/playing.gif') {
+      returnInitialTamagotchiImage();
+    }
+  }, 1500);
 });
 
 document.querySelector('#sleep').addEventListener('click', () => {
@@ -277,7 +285,11 @@ document.querySelector('#sleep').addEventListener('click', () => {
   checkFunction();
 
   document.querySelector('#tamagotchiImage').setAttribute('src', 'images/sleeping.gif');
-  setTimeout(returnInitialTamagotchiImage, 1500);
+  setTimeout(() => {
+    if(document.querySelector('#tamagotchiImage').getAttribute('src') === 'images/sleeping.gif') {
+      returnInitialTamagotchiImage();
+    }
+  }, 1500);
 });
 
 document.querySelector('#eat').addEventListener('click', () => {
@@ -285,7 +297,11 @@ document.querySelector('#eat').addEventListener('click', () => {
   checkFunction();
 
   document.querySelector('#tamagotchiImage').setAttribute('src', 'images/eating.gif');
-  setTimeout(returnInitialTamagotchiImage, 1500);
+  setTimeout(() => {
+    if(document.querySelector('#tamagotchiImage').getAttribute('src') === 'images/eating.gif') {
+      returnInitialTamagotchiImage();
+    }
+  }, 1500);
 });
 
 document.querySelector('#drink').addEventListener('click', () => {
@@ -293,7 +309,11 @@ document.querySelector('#drink').addEventListener('click', () => {
   checkFunction();
 
   document.querySelector('#tamagotchiImage').setAttribute('src', 'images/drinking.gif');
-  setTimeout(returnInitialTamagotchiImage, 1500);
+  setTimeout(() => {
+    if(document.querySelector('#tamagotchiImage').getAttribute('src') === 'images/drinking.gif') {
+      returnInitialTamagotchiImage();
+    }
+  }, 1500);
 });
 
 // TASK 3: SUM
