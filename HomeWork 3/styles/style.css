@@ -1,0 +1,110 @@
+.tamagotchi {
+  width: 500px;
+  height: 650px;
+  border: 3px solid #41357D;
+  border-radius: 50% 50% 5% 5%;
+  margin-top: 50px;
+  margin-left: 50px;
+  background: #AF8AF3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#tamagotchiName {
+  margin-top: 40px;
+  text-align: center;
+  color: #FF70BA;
+  font-size: 32px;
+  text-shadow: 2px 0 0 #41357D, -2px 0 0 #41357D, 0 2px 0 #41357D, 0 -2px 0 #41357D, 1px 1px #41357D, -1px -1px 0 #41357D, 1px -1px 0 #41357D, -1px 1px 0 #41357D;
+  margin-bottom: 10px;
+}
+
+.tamagotchi_display {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.tamagotchi_display-bg {
+  width: 325px;
+  height: 325px;
+  position: absolute;
+  left: 140px;
+}
+
+.tamagotchi_display-image {
+  width: 240px;
+  height: 240px;
+  position: relative;
+  top: 42px;
+  border: 6px solid #41357D;
+  border-radius: 2%;
+}
+
+.tamagotchi_bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.tamagotchi_bar p {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-shadow: 2px 0 0 #41357D, -2px 0 0 #41357D, 0 2px 0 #41357D, 0 -2px 0 #41357D, 1px 1px #41357D, -1px -1px 0 #41357D, 1px -1px 0 #41357D, -1px 1px 0 #41357D;
+}
+
+#healthBar {
+  color: #FA8EC5;
+}
+
+#happinessBar {
+  color: #C1F884;
+}
+
+#hungryBar {
+  color: #F2B738;
+}
+
+#thirstyBar {
+  color: #0FC0FC;
+}
+
+.tamagotchi_control {
+  width: 450px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.tamagotchi_control-btn {
+  width: 75px;
+  height: 75px;
+  border: 3px solid #41357D;
+  border-radius: 50%;
+  background: #FF70BA;
+  outline: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #41357D;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: .2s;
+}
+
+.tamagotchi_control-btn:hover {
+  background: #FF7EC8;
+}
+
+.tamagotchi_control-btn:active {
+  background: #F96AB4;
+}

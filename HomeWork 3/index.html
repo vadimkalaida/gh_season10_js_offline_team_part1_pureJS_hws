@@ -6,9 +6,33 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/basic.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
+  <div class="tamagotchi">
+    <h1 id="tamagotchiName"></h1>
+    <div class="tamagotchi_display">
+      <img src="images/Vellum-s-flokovym-napyleniem-Rozovyj-goroshek.png" alt="display background" class="tamagotchi_display-bg">
+      <img src="images/tama.gif" alt="display image" class="tamagotchi_display-image">
+    </div>
+    <div class="tamagotchi_bar">
+      <p id="healthBar"></p>
+      <p id="happinessBar">Happiness = 0</p>
+      <p id="hungryBar">Hungry = 0</p>
+      <p id="thirstyBar">Thirsty = 0</p>
+    </div>
+    <div class="tamagotchi_control">
+      <button class="tamagotchi_control-btn" id="walk"><i class="fas fa-walking"></i></button>
+      <button class="tamagotchi_control-btn" id="play"><i class="fas fa-gamepad"></i></button>
+      <button class="tamagotchi_control-btn" id="sleep"><i class="fas fa-bed"></i></button>
+      <button class="tamagotchi_control-btn" id="eat"><i class="fas fa-utensils"></i></button>
+      <button class="tamagotchi_control-btn" id="drink"><i class="fas fa-wine-glass-alt"></i></button>
+    </div>
+  </div>
 
 <script src="index.js"></script>
 </body>

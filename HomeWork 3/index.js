@@ -212,7 +212,70 @@ class Tamagotchi {
 
 }
 
-let myTamagotchi = new Tamagotchi(prompt('What is name of your Tamagotchi?'), 50, 50, 50, 100);
+let tamagotchiName = prompt('What is name of your Tamagotchi?(1-14 letters)');
+
+if(tamagotchiName.length < 1 || tamagotchiName.length > 14) {
+  alert('Your tamagotchi\'s name is incorrect!');
+  location.reload();
+} else {
+  console.log('Your tamagotchi\s name is correct!');
+}
+
+alert('If Tamagotchi\'s happiness is lower than -100, he will run away. \n' +
+  'If Tamagotchi\'s hungry is more than 200 or lower than -200, he will die. \n' +
+  'If Tamagotchi\'s thirsty is more than 200 or lower than -150, he will die. \n' +
+  'If Tamagotchi\'s health lower than -100, he will die.');
+
+let myTamagotchi = new Tamagotchi(tamagotchiName, 50, 50, 50, 100);
+document.querySelector('#tamagotchiName').innerHTML = tamagotchiName;
+
+let checkFunction = () => {
+  if(myTamagotchi.hungry < -200 || myTamagotchi.hungry > 200 || myTamagotchi.health < -100 || myTamagotchi.thirsty < -150 || myTamagotchi.thirsty > 200) {
+    alert(`Oh no! ${tamagotchiName} died! Page will be reloaded!`);
+    location.reload();
+  } else if(myTamagotchi.happiness < -100) {
+    alert(`Oh no! ${tamagotchiName} ran away! Page will be reloaded!`);
+    location.reload();
+  }
+};
+
+setInterval(() => {
+  if(myTamagotchi.health > 200) {
+    myTamagotchi.health = 200;
+  }
+  if(myTamagotchi.happiness > 200) {
+    myTamagotchi.happiness = 200;
+  }
+  document.querySelector('#healthBar').innerHTML = `Health = ${myTamagotchi.health}`;
+  document.querySelector('#happinessBar').innerHTML = `Happiness = ${myTamagotchi.happiness}`;
+  document.querySelector('#hungryBar').innerHTML = `Hungry = ${myTamagotchi.hungry}`;
+  document.querySelector('#thirstyBar').innerHTML = `Thirsty = ${myTamagotchi.thirsty}`;
+}, 100);
+
+document.querySelector('#walk').addEventListener('click', () => {
+  myTamagotchi.walk();
+  checkFunction();
+});
+
+document.querySelector('#play').addEventListener('click', () => {
+  myTamagotchi.play();
+  checkFunction();
+});
+
+document.querySelector('#sleep').addEventListener('click', () => {
+  myTamagotchi.sleep();
+  checkFunction();
+});
+
+document.querySelector('#eat').addEventListener('click', () => {
+  myTamagotchi.eat();
+  checkFunction();
+});
+
+document.querySelector('#drink').addEventListener('click', () => {
+  myTamagotchi.drink();
+  checkFunction();
+});
 
 // TASK 3: SUM
 
