@@ -23,6 +23,7 @@
   font-weight: 800;
   transition: .2s;
   top: 150px;
+  z-index: 999999;
 }
 
 .slider_btn:hover {
@@ -42,18 +43,28 @@
 }
 
 .slider_items {
-  width: 10000px;
+  width: 600px;
   position: relative;
   display: flex;
+  justify-content: flex-start;
   transition: left .2s ease-out;
 }
 
 .slider-item {
-  width: 600px;
+  width: 0;
   height: 350px;
   position: relative;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: all .2s ease-out;
+  left: 0;
+}
+
+.slider-item p {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,6 +73,7 @@
   color: #FDF25F;
   text-shadow: 2px 0 0 #1390DB, -2px 0 0 #1390DB, 0 2px 0 #1390DB, 0 -2px 0 #1390DB, 1px 1px #1390DB, -1px -1px 0 #1390DB, 1px -1px 0 #1390DB, -1px 1px 0 #1390DB;
   opacity: 0;
+  transition: .2s;
 }
 
 .slider-item span {
@@ -70,8 +82,14 @@
 }
 
 .slider-item.active {
+  width: 600px;
   opacity: 1;
 }
+
+.slider-item.active p {
+  opacity: 1;
+}
+
 
 .slider-item:nth-child(1) {
   background: url("../images/lilskies.jpg");

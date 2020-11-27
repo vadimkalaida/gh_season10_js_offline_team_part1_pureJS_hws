@@ -2,15 +2,15 @@ const sliderItems = document.querySelectorAll('.slider-item');
 let currentSliderItemIndex = 0;
 let leftPosNumber = 0;
 
-let sliderFunction = (items, index, posNum) => {
+let sliderFunction = (items, index) => {
   for(let i = 0; i < items.length; i++) {
     if(i === index) {
       items[i].classList.add('active');
-      items[i].style.left = posNum + 'px';
     } else {
-      if(items[i].classList.contains('active')) {
-        items[i].classList.remove('active');
+      if(items[i].classList.contains('active') ) {
+        items[i].classList.remove('active')
       }
+
     }
   }
 };
@@ -21,7 +21,7 @@ document.querySelector('#leftBtn').addEventListener('click', () => {
     currentSliderItemIndex = sliderItems.length - 1;
   }
   leftPosNumber += 600;
-  sliderFunction(sliderItems, currentSliderItemIndex, leftPosNumber);
+  sliderFunction(sliderItems, currentSliderItemIndex);
 });
 
 document.querySelector('#rightBtn').addEventListener('click', () => {
@@ -31,5 +31,5 @@ document.querySelector('#rightBtn').addEventListener('click', () => {
     currentSliderItemIndex = 0;
   }
   leftPosNumber -= 600;
-  sliderFunction(sliderItems, currentSliderItemIndex, leftPosNumber);
+  sliderFunction(sliderItems, currentSliderItemIndex);
 });
