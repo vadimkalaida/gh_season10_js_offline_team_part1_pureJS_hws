@@ -1,0 +1,106 @@
+.slider {
+  max-width: 600px;
+  height: 350px;
+  background: #87DFC5;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.slider_btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #1390DB;
+  background: #FDF25F;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  font-size: 22px;
+  font-weight: 800;
+  transition: .2s;
+  top: 150px;
+}
+
+.slider_btn:hover {
+  background: #FFF966;
+}
+
+.slider_btn:active {
+  background: #F7EC59;
+}
+
+#leftBtn {
+  left: -25px;
+}
+
+#rightBtn {
+  right: -25px;
+}
+
+.slider_items {
+  width: 10000px;
+  position: relative;
+  display: flex;
+  transition: left .2s ease-out;
+}
+
+.slider-item {
+  width: 600px;
+  height: 350px;
+  position: relative;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 96px;
+  color: #FDF25F;
+  text-shadow: 2px 0 0 #1390DB, -2px 0 0 #1390DB, 0 2px 0 #1390DB, 0 -2px 0 #1390DB, 1px 1px #1390DB, -1px -1px 0 #1390DB, 1px -1px 0 #1390DB, -1px 1px 0 #1390DB;
+  opacity: 0;
+}
+
+.slider-item span {
+  font-size: 26px;
+  margin-top: 0;
+}
+
+.slider-item.active {
+  opacity: 1;
+}
+
+.slider-item:nth-child(1) {
+  background: url("../images/lilskies.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-item:nth-child(2) {
+  background: url("../images/maxresdefault.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-item:nth-child(3) {
+  background: url("../images/postmalone.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-item:nth-child(4) {
+  background: url("../images/travis.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-item:active {
+  cursor: grabbing;
+}
