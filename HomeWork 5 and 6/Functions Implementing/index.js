@@ -10,6 +10,14 @@ let factorial = (num) => {
   return newNum;
 };
 
+//3 Fibonacci number
+let fib = (num) => {
+  if(num <= 1) {
+    return num;
+  }
+  return fib(num - 1) + fib(num - 2);
+};
+
 //4. isSorted Function
 let isSorted = (arr) => {
 
