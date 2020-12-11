@@ -1,5 +1,24 @@
-//2. Factorial Function
+//1. IsPrime Function
 
+let isPrime = (num) => {
+  let booleanVariable;
+
+  if(num > 1) {
+    booleanVariable = true;
+  } else {
+    return false;
+  }
+
+  for(let i = num; i > 1; i--) {
+    if(num % i === 0 && (i !== 1 && i !== num)) {
+      booleanVariable = false;
+    }
+  }
+
+  return booleanVariable;
+};
+
+//2. Factorial Function
 let factorial = (num) => {
   let newNum = 1;
 
