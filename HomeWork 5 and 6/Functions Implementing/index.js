@@ -1,3 +1,15 @@
+//2. Factorial Function
+
+let factorial = (num) => {
+  let newNum = 1;
+
+  for(let i = 1; i <= num; i++) {
+    newNum *= i;
+  }
+
+  return newNum;
+};
+
 //4. isSorted Function
 let isSorted = (arr) => {
 
