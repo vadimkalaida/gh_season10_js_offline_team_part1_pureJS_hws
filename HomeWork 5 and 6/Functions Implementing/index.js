@@ -74,3 +74,25 @@ let indexOf = (arr, num) => {
 
   return indexOfNumber;
 };
+
+//7. isPalindrome function
+let isPalindrome = (myString) => {
+  let newString = '';
+  let booleanVariable;
+
+  for(let i = 0; i < myString.length; i++) {
+    if(myString[i] !== ' ') {
+      newString += (myString[i].toLowerCase());
+    }
+  }
+
+  for(let i = 0; i < newString.length; i++) {
+    if(newString[i] !== newString[newString.length - (i + 1)]) {
+      return false
+    } else {
+      booleanVariable = true;
+    }
+  }
+
+  return booleanVariable;
+};
