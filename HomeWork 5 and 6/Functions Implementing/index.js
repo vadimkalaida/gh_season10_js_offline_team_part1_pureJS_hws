@@ -96,3 +96,40 @@ let isPalindrome = (myString) => {
 
   return booleanVariable;
 };
+
+//8. missing item
+let missingItems = (arr) => {
+  let arrOfItems = [];
+  let maxNum = arr[0];
+  let found = false;
+
+  for(let i = 0; i < arr.length; i++) {
+    if(maxNum <= arr[i]) {
+      maxNum = arr[i];
+    }
+  }
+
+  for(let i = maxNum; i > 0; i--) {
+    found = false;
+    for(let j = 0; j < arr.length; j++) {
+      if(maxNum === arr[j]) {
+        found = true;
+        break;
+      } else {
+        found = false;
+      }
+    }
+    if(!found) {
+      arrOfItems.push(maxNum);
+    }
+    maxNum--;
+  }
+
+  if(arrOfItems.length === 0) {
+    return undefined;
+  } else if(arrOfItems.length === 1) {
+    return `Missing item is ${arrOfItems[0]}`;
+  } else {
+    return `Missing items are ${arrOfItems}`;
+  }
+};
