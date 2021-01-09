@@ -133,3 +133,43 @@ let missingItems = (arr) => {
     return `Missing items are ${arrOfItems}`;
   }
 };
+
+//9. isBalanced
+let isBalanced = (myString) => {
+  let bracketsString = '';
+  let numOfOpenedBrackets = 0;
+  let numOfClosedBrackets = 0;
+  let secondNumOfClosedBrackets = 0;
+
+  for(let i = 0; i < myString.length; i++) {
+    if(myString[i] === '{' || myString[i] === '}' ) {
+      bracketsString += myString[i];
+    }
+    if(myString[i] === '{') {
+      numOfOpenedBrackets++;
+    } else if(myString[i] === '}') {
+      numOfClosedBrackets++;
+    }
+  }
+
+  if(bracketsString.length % 2 !== 0 || numOfOpenedBrackets !== numOfClosedBrackets || bracketsString[0] === '}') {
+    return false;
+  }
+
+  secondNumOfClosedBrackets = numOfOpenedBrackets;
+
+  for(let i = 0; i < bracketsString.length; i++) {
+    if(bracketsString[i] === '{') {
+      numOfOpenedBrackets--;
+    }
+    if(bracketsString[i] === '}') {
+      numOfClosedBrackets--;
+    }
+    if(bracketsString[i] === '{' && numOfClosedBrackets !== secondNumOfClosedBrackets) {
+      return false;
+    }
+  }
+
+  return true;
+
+};
